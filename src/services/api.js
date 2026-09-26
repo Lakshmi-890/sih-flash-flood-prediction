@@ -1,4 +1,16 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+function getApiBaseUrl() {
+  const envUrl = (import.meta.env.VITE_API_BASE_URL || '').trim();
+  // If running on a public website (Render, Vercel, etc.),
+  // do not allow a baked-in localhost URL to target the visitor's machine.
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    if (envUrl.includes('localhost') || envUrl.includes('127.0.0.1')) {
+      return '';
+    }
+  }
+  return envUrl;
+}
+
+const API_BASE_URL = getApiBaseUrl();
 
 export async function fetchHealthStatus() {
   try {
@@ -20,11 +32,25 @@ export async function fetchHealthStatus() {
 }
 
 export async function executeLivePrediction() {
-  const res = await fetch(`${API_BASE_URL}/api/live-prediction`);
-  if (!res.ok) {
-    throw new Error(`Failed to retrieve live prediction: HTTP ${res.status}`);
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/live-prediction`);
+    if (!res.ok) {
+      if (res.status === 503 || res.status === 502 || res.status === 504) {
+        throw new Error('Cloud backend is waking up from idle state. Please wait 10 seconds and click Retry.');
+      }
+      throw new Error(`Failed to retrieve live prediction: HTTP ${res.status}`);
+    }
+    return await res.json();
+  } catch (err) {
+    if (err.message && err.message.includes('waking up')) {
+      throw err;
+    }
+    if (err.name === 'TypeError' || err.message === 'Failed to fetch') {
+      const target = API_BASE_URL || (typeof window !== 'undefined' ? window.location.origin : 'backend');
+      throw new Error(`Cannot connect to backend (${target}). Ensure backend is active.`);
+    }
+    throw err;
   }
-  return await res.json();
 }
 
 export async function fetchRainfallForecast() {

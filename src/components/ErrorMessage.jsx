@@ -14,15 +14,15 @@ export default function ErrorMessage({ message, onRetry }) {
               TELEMETRY ACQUISITION FAULT
             </h3>
             <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-rose-100 dark:bg-rose-500/20 text-rose-800 dark:text-rose-300 border border-rose-300 dark:border-rose-500/30">
-              SYS-ERR 503
+              {message?.includes('503') ? 'SYS-ERR 503' : 'SYSTEM NOTICE'}
             </span>
           </div>
           <p className="text-xs text-rose-900/90 dark:text-rose-200/80 mt-1 max-w-xl font-mono leading-relaxed">
-            {message || 'Unable to establish connection with local telemetry service or Google Earth Engine API.'}
+            {message || 'Unable to establish connection with telemetry service or Google Earth Engine API.'}
           </p>
           <div className="flex items-center space-x-2 mt-2 text-[11px] font-mono text-slate-600 dark:text-slate-400">
             <Terminal className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-            <span>Ensure backend daemon on port 8000 is active. Fallback model pipelines stand ready.</span>
+            <span>Telemetry endpoint offline or waking up. Fallback model pipelines stand ready.</span>
           </div>
         </div>
       </div>
