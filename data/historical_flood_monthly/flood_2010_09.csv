@@ -1,0 +1,3 @@
+event_id,flooded_pixels,max_flood_duration_days,dfo_country,dfo_main_cause,dfo_severity,dfo_dead,dfo_displaced,dfo_centroid_x,dfo_centroid_y,clear_views,clear_perc,year,month,flood_occurrence
+3716,64,1,Bangladesh,Monsoon Rains,1.5,0,140000,89.640001,25.424999,,,2010,9,1
+3717,64,1,India,Monsoon Rains,1.5,88,15000,82.845001,26.729999,,,2010,9,1

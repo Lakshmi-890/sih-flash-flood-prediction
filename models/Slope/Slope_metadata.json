@@ -1,0 +1,71 @@
+{
+    "dataset": "Slope",
+    "best_model": "ARIMA",
+    "best_model_file": "Slope_best_model.pkl",
+    "sequence_length": 12,
+    "predicted_slope_degree": 35.28230268143529,
+    "slope_risk_score": 0.0,
+    "slope_risk_level": "LOW",
+    "metrics": [
+        {
+            "Model": "ARIMA",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "MAPE": 0.0,
+            "R2": 1.0,
+            "MAE_Rank": 1.5,
+            "RMSE_Rank": 1.5,
+            "MAPE_Rank": 1.5,
+            "R2_Rank": 1.5,
+            "Total_Rank": 6.0
+        },
+        {
+            "Model": "SARIMAX",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "MAPE": 0.0,
+            "R2": 1.0,
+            "MAE_Rank": 1.5,
+            "RMSE_Rank": 1.5,
+            "MAPE_Rank": 1.5,
+            "R2_Rank": 1.5,
+            "Total_Rank": 6.0
+        },
+        {
+            "Model": "XGBoost",
+            "MAE": 1.750100224739981e-07,
+            "RMSE": 1.750100224739981e-07,
+            "MAPE": 4.960277792925466e-07,
+            "R2": 0.0,
+            "MAE_Rank": 3.0,
+            "RMSE_Rank": 3.0,
+            "MAPE_Rank": 3.0,
+            "R2_Rank": 4.0,
+            "Total_Rank": 13.0
+        },
+        {
+            "Model": "LSTM",
+            "MAE": 0.00028228759765625,
+            "RMSE": 0.00028228759765625,
+            "MAPE": 0.000800082689627166,
+            "R2": 0.0,
+            "MAE_Rank": 4.0,
+            "RMSE_Rank": 4.0,
+            "MAPE_Rank": 4.0,
+            "R2_Rank": 4.0,
+            "Total_Rank": 16.0
+        },
+        {
+            "Model": "GRU",
+            "MAE": 0.0007476806640625,
+            "RMSE": 0.0007476806640625,
+            "MAPE": 0.0021191379346881694,
+            "R2": 0.0,
+            "MAE_Rank": 5.0,
+            "RMSE_Rank": 5.0,
+            "MAPE_Rank": 5.0,
+            "R2_Rank": 4.0,
+            "Total_Rank": 19.0
+        }
+    ]
+}

@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply antialiased transition-colors duration-300;
+  }
+
+  /* =========================================
+     DARK THEME (Default Aerospace Command Deck)
+     ========================================= */
+  html.dark body,
+  body.dark {
+    @apply bg-[#070b12] text-slate-100 selection:bg-cyan-500 selection:text-black;
+    background-color: #070b12;
+    background-image: 
+      radial-gradient(ellipse at 50% 0%, rgba(2, 132, 199, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 100%, rgba(139, 92, 246, 0.10) 0%, transparent 50%),
+      linear-gradient(to bottom, rgba(7, 11, 18, 0.85), rgba(7, 11, 18, 0.98)),
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    background-attachment: fixed;
+  }
+
+  /* =========================================
+     LIGHT THEME (Scientific Luminous Lab)
+     ========================================= */
+  html.light body,
+  body.light {
+    @apply bg-[#f8fafc] text-slate-900 selection:bg-sky-500 selection:text-white;
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(ellipse at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 0% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
+      linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%),
+      linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    background-attachment: fixed;
+  }
+}
+
+/* =========================================
+   SCROLLBARS
+   ========================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #080c14;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================
+   GLASS PANELS (DARK MODE)
+   ========================================= */
+html.dark .glass-panel {
+  background: rgba(12, 18, 30, 0.78) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45) !important;
+}
+
+html.dark .glass-panel-glow {
+  background: rgba(12, 18, 30, 0.88) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.25) !important;
+  box-shadow: 0 0 30px -5px rgba(0, 240, 255, 0.2), 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .glass-card-interactive:hover {
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 240, 255, 0.25) !important;
+}
+
+/* =========================================
+   GLASS PANELS (LIGHT MODE)
+   ========================================= */
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .glass-panel-glow {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #38bdf8 !important;
+  box-shadow: 0 0 25px -5px rgba(2, 132, 199, 0.18), 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .glass-card-interactive:hover {
+  border-color: #0284c7 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -8px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* =========================================
+   LIGHT MODE CONTRAST & TYPOGRAPHY ADAPTATION
+   ========================================= */
+html.light .text-white:not(.code-console *):not(.badge-text-override) {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100:not(.code-console *) {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200:not(.code-console *) {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300:not(.code-console *) {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400:not(.code-console *) {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500:not(.code-console *) {
+  color: #64748b !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/5,
+html.light [class*="border-white/"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* =========================================
+   BRIGHT ACTIVE TAB & OUTLINE GLOW
+   ========================================= */
+.active-tab-outline-cyan {
+  background-color: #00f0ff !important;
+  color: #04070d !important;
+  font-weight: 800 !important;
+  outline: 2px solid #00f0ff !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.75), 0 0 10px rgba(0, 240, 255, 0.4) !important;
+}
+
+html.light .active-tab-outline-cyan {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  outline: 2px solid #0284c7 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.6) !important;
+}
+
+.active-tab-outline-emerald {
+  background-color: #10b981 !important;
+  color: #04070d !important;
+  font-weight: 800 !important;
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.75), 0 0 10px rgba(16, 185, 129, 0.4) !important;
+}
+
+html.light .active-tab-outline-emerald {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  outline: 2px solid #059669 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 20px rgba(5, 150, 105, 0.6) !important;
+}
+
+.active-tab-outline-rose {
+  background-color: #f43f5e !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  outline: 2px solid #f43f5e !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.75), 0 0 10px rgba(244, 63, 94, 0.4) !important;
+}
+
+/* =========================================
+   ANIMATIONS & RADAR EFFECTS
+   ========================================= */
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-radar-ping {
+  animation: radar-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Leaflet map enhancements */
+html.dark .leaflet-container {
+  background: #080c14 !important;
+  font-family: inherit;
+}
+
+html.light .leaflet-container {
+  background: #f8fafc !important;
+  font-family: inherit;
+}
+
+html.dark .leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .leaflet-popup-tip {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+html.light .leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1;
+}
+
+.radar-beacon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-beacon-core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 2;
+}
+
+.radar-beacon-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  z-index: 1;
+}

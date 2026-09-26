@@ -1,0 +1,32 @@
+{
+    "dataset": "Historical Landslide",
+    "best_model": "GRU",
+    "risk_score": 0.0005532411742024124,
+    "risk_level": "LOW",
+    "models": [
+        {
+            "Model": "GRU",
+            "Accuracy": 0.9411764705882353,
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0,
+            "ROC_AUC": 1.0
+        },
+        {
+            "Model": "LSTM",
+            "Accuracy": 0.9411764705882353,
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0,
+            "ROC_AUC": 0.5
+        },
+        {
+            "Model": "XGBoost",
+            "Accuracy": 0.9411764705882353,
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0,
+            "ROC_AUC": 0.5
+        }
+    ]
+}

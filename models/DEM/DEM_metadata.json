@@ -1,0 +1,73 @@
+{
+    "dataset": "DEM",
+    "best_model": "ARIMA",
+    "sequence_length": 12,
+    "input_size": 1,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "predicted_elevation_m": 2721.837517392416,
+    "terrain_risk_score": 0.0,
+    "terrain_risk_level": "LOW",
+    "metrics": [
+        {
+            "Model": "ARIMA",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "MAPE": 0.0,
+            "R2": 1.0,
+            "MAE_Rank": 1.5,
+            "RMSE_Rank": 1.5,
+            "MAPE_Rank": 1.5,
+            "R2_Rank": 1.5,
+            "Total_Rank": 6.0
+        },
+        {
+            "Model": "SARIMAX",
+            "MAE": 0.0,
+            "RMSE": 0.0,
+            "MAPE": 0.0,
+            "R2": 1.0,
+            "MAE_Rank": 1.5,
+            "RMSE_Rank": 1.5,
+            "MAPE_Rank": 1.5,
+            "R2_Rank": 1.5,
+            "Total_Rank": 6.0
+        },
+        {
+            "Model": "XGBoost",
+            "MAE": 0.00011504866597533692,
+            "RMSE": 0.0001150486659753369,
+            "MAPE": 4.226874868179357e-06,
+            "R2": -1.6001578545043712e+16,
+            "MAE_Rank": 3.0,
+            "RMSE_Rank": 3.0,
+            "MAPE_Rank": 3.0,
+            "R2_Rank": 5.0,
+            "Total_Rank": 14.0
+        },
+        {
+            "Model": "LSTM",
+            "MAE": 0.000244140625,
+            "RMSE": 0.000244140625,
+            "MAPE": 8.969699100680029e-06,
+            "R2": 0.0,
+            "MAE_Rank": 4.0,
+            "RMSE_Rank": 4.0,
+            "MAPE_Rank": 4.0,
+            "R2_Rank": 3.5,
+            "Total_Rank": 15.5
+        },
+        {
+            "Model": "GRU",
+            "MAE": 0.0009765625,
+            "RMSE": 0.0009765625,
+            "MAPE": 3.5878796402720116e-05,
+            "R2": 0.0,
+            "MAE_Rank": 5.0,
+            "RMSE_Rank": 5.0,
+            "MAPE_Rank": 5.0,
+            "R2_Rank": 3.5,
+            "Total_Rank": 18.5
+        }
+    ]
+}

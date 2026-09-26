@@ -1,0 +1,2 @@
+ward_id,latitude,longitude,elevation_m,slope_deg,urban_impervious,historical_landslide_events_count,historical_flood_recurrence_index
+HP_KULLU_WARD_01,31.9578,77.1025,1462,48.213791506266794,0.03737696800517904,13,0.0

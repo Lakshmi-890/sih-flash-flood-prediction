@@ -1,0 +1,2 @@
+event_id,flooded_pixels,max_flood_duration_days,dfo_country,dfo_main_cause,dfo_severity,dfo_dead,dfo_displaced,dfo_centroid_x,dfo_centroid_y,clear_views,clear_perc,year,month,flood_occurrence
+2570,64,1,India,Heavy rain,1,210,100000,89.400194,24.686228,,,2004,10,1
